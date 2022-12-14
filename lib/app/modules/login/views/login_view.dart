@@ -7,6 +7,9 @@ import 'package:uas_app/app/modules/Login_page/views/login_page_view.dart';
 import 'package:uas_app/app/modules/daftar/views/daftar_view.dart';
 import 'package:uas_app/app/modules/home/views/home_view.dart';
 
+
+// Class ini login ini menggunakan statefull widget karena untuk menampilkan teks
+// dan tombol yang dapat mengubah internal state
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
 
@@ -54,35 +57,10 @@ class _LoginViewState extends State<LoginView> {
                     ],
                   ),
                 ),
-                //
-                // const SizedBox(
-                //   height: 22.0,
-                // ),
-                // TextFormField(
-                //   // initialValue: '123456',
-                //   // maxLength: 20,
-                //   controller: passwordController,
-                //   obscureText: true,
-                //   decoration: const InputDecoration(
-                //     labelText: 'Password',
-                //     labelStyle: TextStyle(
-                //       color: Colors.blueGrey,
-                //     ),
-                //     prefixIcon: Icon(
-                //       Icons.lock,
-                //     ),
-                //     enabledBorder: UnderlineInputBorder(
-                //       borderSide: BorderSide(
-                //         color: Colors.blueGrey,
-                //       ),
-                //     ),
-                //     // helperText: 'Enter your password',
-                //   ),
-                //   onChanged: (value) {},
-                // ),
                 const SizedBox(
                   height: 30.0,
                 ),
+                // Text dibawah memiliki type data static 
                 Text('Silahkan pilih login,',
                     style: TextStyle(
                       color: Color.fromARGB(255, 85, 83, 83),
@@ -94,6 +72,7 @@ class _LoginViewState extends State<LoginView> {
                 const SizedBox(
                   height: 15.0,
                 ),
+                // Apabila tombol login ditekan akan navigasi menuju Login Page untuk melakukan login menggunakan email dan password 
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Color.fromARGB(255, 204, 30, 143),
@@ -134,6 +113,7 @@ class _LoginViewState extends State<LoginView> {
                 const SizedBox(
                   height: 15.0,
                 ),
+                // Apabila tombol Daftar ditekan akan navigasi menuju Daftar untuk melakukan Regist menggunakan username, email dan password 
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Color.fromARGB(255, 204, 30, 143),

@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
     return FutureBuilder(
         future: Future.delayed(Duration(seconds: 3)),
         builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
+          if (snapshot.connectionState == 
+          ConnectionState.waiting) {
             return SplashScreen();
           } else {
             return GetMaterialApp(

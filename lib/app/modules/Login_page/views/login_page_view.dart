@@ -8,6 +8,8 @@ import '../controllers/login_page_controller.dart';
 
 class LoginPageView extends GetView<LoginPageController> {
   static Future<User?> loginUsingEmailPassword(
+    //fungsi dibawah ini digunakan untuk autentication email yaitu membutuhkan email dan password 
+    // dengan type data string
       {required String email,
       required String password,
       required BuildContext context}) async {
@@ -25,7 +27,7 @@ class LoginPageView extends GetView<LoginPageController> {
 
     return user;
   }
-
+  // Untuk control teks yang ada di form 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   @override
@@ -35,6 +37,8 @@ class LoginPageView extends GetView<LoginPageController> {
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 255, 255, 255),
         leading: IconButton(
+          // Icon ini akan navigasi kembali ke halaman sebelumnya 
+          
             onPressed: () {
               Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (context) => LoginView()));
@@ -78,6 +82,7 @@ class LoginPageView extends GetView<LoginPageController> {
             const SizedBox(
               height: 20.0,
             ),
+            // Ini form passwordnya 
             TextFormField(
               obscureText: true,
               controller: passwordController,
@@ -101,6 +106,8 @@ class LoginPageView extends GetView<LoginPageController> {
               style: ElevatedButton.styleFrom(
                 primary: Color.fromARGB(255, 204, 30, 143),
               ),
+              // ini lokasi tombol ketika di klik akan menuju Home ketika 
+              // sudah memiliki akun yang terdaftar
               onPressed: () async {
                 User? user = await loginUsingEmailPassword(
                     email: emailController.text,

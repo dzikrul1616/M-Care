@@ -8,6 +8,7 @@ import 'package:uas_app/app/modules/login/views/login_view.dart';
 import '../controllers/daftar_controller.dart';
 
 class DaftarView extends GetView<DaftarController> {
+  // Ini text untuk kontrol teks yang ada pada teksform
   final usernameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
@@ -43,6 +44,7 @@ class DaftarView extends GetView<DaftarController> {
             const SizedBox(
               height: 20.0,
             ),
+            //form username untuk mengisi nama username 
             TextFormField(
               controller: usernameController,
               decoration: const InputDecoration(
@@ -61,6 +63,7 @@ class DaftarView extends GetView<DaftarController> {
             const SizedBox(
               height: 20.0,
             ),
+            //form username untuk mengisi nama email
             TextFormField(
               controller: emailController,
               decoration: const InputDecoration(
@@ -79,6 +82,7 @@ class DaftarView extends GetView<DaftarController> {
             const SizedBox(
               height: 20.0,
             ),
+            //form username untuk mengisi nama password dan obscure text true untuk sensor password
             TextFormField(
               obscureText: true,
               controller: passwordController,
@@ -98,10 +102,12 @@ class DaftarView extends GetView<DaftarController> {
             const SizedBox(
               height: 30.0,
             ),
+            // Tombol untuk daftar
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: Color.fromARGB(255, 204, 30, 143),
               ),
+              // Arah navigasi dari tombol daftar mengarah kehalaman Home 
               onPressed: () {
                 FirebaseAuth.instance
                     .createUserWithEmailAndPassword(
